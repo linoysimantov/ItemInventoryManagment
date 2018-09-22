@@ -1,0 +1,37 @@
+
+   <mat-card>
+    <mat-card-title>Add Item</mat-card-title>
+         <form #itemForm="ngForm" (ngSubmit)="save(itemForm)">
+             <mat-card-content>
+                <div>
+            <mat-form-field>
+      
+        <input matInput placeholder="Item Name"  type="text"
+                #itemName="ngModel"  [(ngModel)]="item.itemName" name="itemName" required>
+               </mat-form-field>
+        </div>
+                
+        <div>
+         <mat-form-field>
+         <input matInput placeholder="Inventory Code" type="number"
+                 #inventoryCode="ngModel" [(ngModel)]="item.inventoryCode" 
+                 name="inventoryCode" required>
+                </mat-form-field>
+                </div>
+      <div>
+                 <mat-form-field>
+         <input matInput placeholder="Item Amount" type="number"
+                #amount="ngModel" [(ngModel)]="item.amount" name="amount" required>
+               </mat-form-field>
+               </div>
+                 </mat-card-content>
+       <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!itemForm.form.valid">Save</button>
+   
+      <a mat-button routerLink="/item-list">Cancel</a>
+    </mat-card-actions>   
+    </form>
+      </mat-card>
+    
+  

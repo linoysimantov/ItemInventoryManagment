@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<mat-card>
+  <mat-card-header></mat-card-header>
+  <mat-card-content>
+  
+        <table>
+ <tr>
+    <th>Item Id</th>
+   <th>Item Name</th>
+    <th>Inventory Code</th>
+    <th>Item Amount</th> 
+  </tr>
+   <tr> 
+  <td >{{item.id}}</td>
+	<td>{{item.itemName}}</td>
+    <td>{{item.inventoryCode}}</td>
+    <td>{{item.amount}}</td>   
+  </tr>
+</table>
+
+  </mat-card-content>
+ 
+ <div class="input-group">
+ <input placeholder= "Deposit quantity" type="text" class="form-control" #depositNum>
+ <button class="input-group-addon hover-cursor" (click)="deposit(depositNum)">
+ <i class=" fa fa-plus-circle fa-2x"></i>
+ </button>
+ </div>
+ 
+  <div class="input-group">
+ <input placeholder= "withdrawal quantity" type="text" class="form-control" class="len" #withdrawalNum>
+ <button class="input-group-addon hover-cursor" (click)="withdrawal(withdrawalNum)">
+ <i class=" fa fa-minus-circle fa-2x"></i>
+ </button>
+</div>
+
+<button mat-fab color="primary" [routerLink]="['']">Return To List</button>
+
+     
+</mat-card>
+</body>
+</html>
